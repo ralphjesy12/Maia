@@ -47,9 +47,9 @@
                                 <p class="control">
                                     <button class="button is-dark" type="submit">Submit</button>
                                 </p>
-                                <p class="control">
+                                <!-- <p class="control">
                                     <a class="button is-link" href="{{ route('register') }}">Not a member yet?</a>
-                                </p>
+                                </p> -->
                             </div>
                         </form>
                     </div>

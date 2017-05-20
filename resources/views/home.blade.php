@@ -1,17 +1,36 @@
-@extends('layouts.app')
+@extends('master')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+<section class="section">
+    <div class="container-fluid">
+        <div class="columns">
+            <div class="column is-2 ">
+                <aside class="menu">
+                    <p class="menu-label">
+                        General
+                    </p>
+                    <ul class="menu-list">
+                        <li><a>Dashboard</a></li>
+                    </ul>
 
-                <div class="panel-body">
-                    You are logged in!
-                </div>
+                    <p class="menu-label">
+                        Account
+                    </p>
+                    <ul class="menu-list">
+                        <li><a href="{{ route('profile') }}">Profile</a></li>
+                        <li><a href="{{ route('logout') }}">Logout</a></li>
+                    </ul>
+                </aside>
+            </div>
+            <div class="column ">
+                <h1 class="title">
+                    Login Now
+                </h1>
+                <h2 class="subtitle">
+                    We help teachers reach their students
+                </h2>
             </div>
         </div>
     </div>
-</div>
+</section>
 @endsection
