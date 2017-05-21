@@ -1,22 +1,51 @@
 
 /**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+* First we will load all of this project's JavaScript dependencies which
+* includes Vue and other libraries. It is a great starting point when
+* building robust, powerful web applications using Vue and Laravel.
+*/
 
 require('./bootstrap');
 
 window.Vue = require('vue');
+window.Vuex = require('vuex');
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+Vue.use(Vuex);
+
+const store = new Vuex.Store({
+    state: {
+        progressIsActive : false,
+        progressInterval : null,
+        progressTimeoutSpeed : 10,
+        progressPosition : 0,
+    },
+    mutations: {
+        progressStart(state){
+            state.progressIsActive = true;
+            state.progressInterval = setInterval(function(){
+                state.progressPosition += 1;
+                if(state.progressPosition> 100)
+                    state.progressPosition = 0;
+            },state.progressTimeoutSpeed);
+        },
+        progressStop(state){
+            state.progressPosition = 0;
+            clearInterval(state.progressInterval);
+            state.progressIsActive = false;
+        },
+        progressSet(state,position){
+            state.progressIsActive = true;
+            clearInterval(state.progressInterval);
+            state.progressPosition = position;
+        }
+    }
+})
 
 Vue.component('profile', require('./components/Profile.vue'));
 
+
+
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    store
 });
