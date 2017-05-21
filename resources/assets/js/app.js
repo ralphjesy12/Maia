@@ -10,40 +10,15 @@ require('./bootstrap');
 window.Vue = require('vue');
 window.Vuex = require('vuex');
 
+import axios from 'axios';
+
 Vue.use(Vuex);
 
-const store = new Vuex.Store({
-    state: {
-        progressIsActive : false,
-        progressInterval : null,
-        progressTimeoutSpeed : 10,
-        progressPosition : 0,
-    },
-    mutations: {
-        progressStart(state){
-            state.progressIsActive = true;
-            state.progressInterval = setInterval(function(){
-                state.progressPosition += 1;
-                if(state.progressPosition> 100)
-                    state.progressPosition = 0;
-            },state.progressTimeoutSpeed);
-        },
-        progressStop(state){
-            state.progressPosition = 0;
-            clearInterval(state.progressInterval);
-            state.progressIsActive = false;
-        },
-        progressSet(state,position){
-            state.progressIsActive = true;
-            clearInterval(state.progressInterval);
-            state.progressPosition = position;
-        }
-    }
-})
+Vue.prototype.$http = axios;
+
+import store from './vuex/store';
 
 Vue.component('profile', require('./components/Profile.vue'));
-
-
 
 const app = new Vue({
     el: '#app',

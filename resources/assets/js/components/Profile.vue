@@ -87,10 +87,13 @@ export default {
                 self.dataLoaded = true;
                 self.$store.commit('progressStop');
             },3000);
-        }
+        },
     },
     mounted() {
         this.getProfileData();
+    },
+    created(){
+        this.$store.dispatch('getCurrentUser');
     }
 }
 </script>

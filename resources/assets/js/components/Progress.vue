@@ -1,7 +1,7 @@
 <template>
     <div class="progress-bar has-text-centered">
         <p>{{ message }}</p>
-        <progress class="progress is-small" :class="{ 'is-hidden' : !progressIsActive }" :value="progressPosition" max="100">15%</progress>
+        <progress class="progress is-small" :class="{ 'is-hidden' : !progress.isActive }" :value="progress.position" max="100">15%</progress>
     </div>
 </template>
 
@@ -20,11 +20,10 @@ export default {
 
     },
     created() {
-    
+
     },
     computed : mapState([
-        'progressIsActive',
-        'progressPosition'
+        'progress',
     ])
 }
 </script>
