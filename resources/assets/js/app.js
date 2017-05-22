@@ -11,8 +11,11 @@ window.Vue = require('vue');
 window.Vuex = require('vuex');
 
 import axios from 'axios';
+import VueRouter from 'vue-router'
+
 
 Vue.use(Vuex);
+Vue.use(VueRouter);
 
 Vue.prototype.$http = axios;
 

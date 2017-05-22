@@ -11,6 +11,6 @@
     </p>
     <ul class="menu-list">
         <li><a class="{{ $active == 'profile' ? 'is-active' : '' }}" href="{{ route('profile') }}">Profile</a></li>
-        <li><a href="{{ route('logout') }}">Logout</a></li>
+        <li><a href="{{ route('user.logout') }}">Logout</a></li>
     </ul>
 </aside>

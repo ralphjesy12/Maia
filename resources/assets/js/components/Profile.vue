@@ -12,25 +12,25 @@
                                 <div class="field">
                                     <label class="label">Username</label>
                                     <p class="control">
-                                        <input class="input" type="text" placeholder="Username">
+                                        <input class="input" type="text" placeholder="Username" :value="currentUser.username">
                                     </p>
                                 </div>
                                 <div class="field">
                                     <label class="label">Email Address</label>
                                     <p class="control">
-                                        <input class="input" type="text" placeholder="Email Address">
+                                        <input class="input" type="text" placeholder="Email Address" :value="currentUser.email">
                                     </p>
                                 </div>
                                 <div class="field">
                                     <label class="label">First Name</label>
                                     <p class="control">
-                                        <input class="input" type="text" placeholder="First Name">
+                                        <input class="input" type="text" placeholder="First Name" :value="currentUser.firstname">
                                     </p>
                                 </div>
                                 <div class="field">
                                     <label class="label">Last Name</label>
                                     <p class="control">
-                                        <input class="input" type="text" placeholder="Last Name">
+                                        <input class="input" type="text" placeholder="Last Name" :value="currentUser.lastname">
                                     </p>
                                 </div>
                                 <div class="block">
@@ -64,7 +64,7 @@
 <script>
 import { Tabs, TabPane } from 'vue-bulma-tabs';
 import ProgressBar from './Progress.vue';
-
+import { mapState } from 'vuex';
 export default {
     data(){
         return {
@@ -94,6 +94,9 @@ export default {
     },
     created(){
         this.$store.dispatch('getCurrentUser');
-    }
+    },
+    computed: mapState({
+        currentUser : state => state.currentUser
+    })
 }
 </script>

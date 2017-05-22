@@ -17,7 +17,7 @@ export default{
         clearInterval(state.progress.interval);
         state.progress.position = position;
     },
-    setCurrentUser(user){
+    setCurrentUser(state,user){
         state.currentUser = user;
     }
 }
