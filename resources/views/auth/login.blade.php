@@ -1,4 +1,4 @@
-@extends('master')
+@extends('welcome')
 
 @section('content')
 <section class="hero is-medium is-dark is-bold is-fullheight">
