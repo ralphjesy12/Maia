@@ -1,5 +1,5 @@
 <div class="column is-2 is-aside">
-    <h1 class="brand"><span>maia</span></h1>
+    <h1 class="brand"><span>eve</span></h1>
     <aside class="menu">
         <p class="menu-label">
             General

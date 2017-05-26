@@ -1,12 +1,16 @@
 @extends('master')
 
+@section('title')
+    Dashboard
+@endsection
+
 @section('content')
 <section class="section">
     <h1 class="title">
-        Login Now
+        Dashboard
     </h1>
     <h2 class="subtitle">
-        We help teachers reach their students
+        Help save Mother Earth while we can. Together.
     </h2>
 </section>
 @endsection

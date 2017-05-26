@@ -1,7 +1,7 @@
 <nav class="nav">
     <div class="nav-left">
         <a class="nav-item">
-            @yield('title','Maia LMS')
+            @yield('title','Project Eve')
         </a>
     </div>
 

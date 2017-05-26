@@ -8,7 +8,7 @@
                 Login Now
             </h1>
             <h2 class="subtitle">
-                We help teachers reach their students
+                Help save Mother Earth while we can. Together.
             </h2>
             <div class="content">
                 <div class="columns">
